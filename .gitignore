@@ -1,5 +1,7 @@
 test.c
+*.out
+*.a
+*.pdf
 .normignore
-.pdf
 /.vscode
 .DS_Store

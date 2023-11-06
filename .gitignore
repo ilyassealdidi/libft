@@ -2,3 +2,4 @@ test.c
 .normignore
 .pdf
 /.vscode
+.DS_Store

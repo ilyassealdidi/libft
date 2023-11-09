@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//",,,Ilyasse,,,Aldidi,,"
+
 static int	count_words(const char *s, int c)
 {
 	int	cnt;

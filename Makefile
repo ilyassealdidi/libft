@@ -6,7 +6,7 @@
 #    By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 15:34:00 by ialdidi           #+#    #+#              #
-#    Updated: 2023/11/09 11:33:15 by ialdidi          ###   ########.fr        #
+#    Updated: 2023/11/09 16:10:46 by ialdidi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 OBJS = $(SRC:.c=.o)
 
 BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-			#ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c\
 
 BONUS_OBJS = $(BONUS:.c=.o)
 

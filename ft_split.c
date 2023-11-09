@@ -5,71 +5,75 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 10:20:39 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/04 19:50:01 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/08 12:41:54 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/08 16:16:34 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	count_words(char const *s, char c)
+//",,,Ilyasse,,,Aldidi,,"
+static int	count_words(const char *s, int c)
 {
 	int	cnt;
+	int	pre;
 
 	cnt = 0;
+	pre = 1;
 	while (*s)
 	{
-		if (*s != c && (*(s + 1) == c || !*(s + 1)))
+		if (*s == c)
+			pre = 1;
+		else if (pre)
+		{
+			pre = 0;
 			cnt++;
+		}
 		s++;
 	}
 	return (cnt);
 }
 
-void	*memfree(char **strs, int k)
+static void	*free_memory(char **strs, int i)
 {
-	while (strs[k--])
-		free(strs[k]);
+	while (i--)
+		free(strs[i]);
 	free(strs);
-	return (0);
+	return (NULL);
 }
 
-static char	**splited_split(char **strs, char const *s, char c)
+static char	**split(char **strs, char const *s, char c)
 {
 	int	i;
-	int	k;
+	int	len;
 
-	k = 0;
+	i = 0;
+	len = 0;
 	while (*s)
 	{
 		while (*s && *s == c)
 			s++;
-		i = 0;
+		len = 0;
 		if (*s)
 		{
-			while (s[i] && s[i] != c)
-				i++;
-			strs[k] = (char *)malloc(sizeof(char) * i + 1);
-			s += i;
-			if (!strs[k])
-				return (memfree(strs, k));
-			ft_strlcpy(strs[k], s - i, i + 1);
-			k++;
+			while (s[len] && s[len] != c)
+				len++;
+			strs[i] = ft_substr(s, 0, len);
+			if (!strs[i])
+				return (free_memory(strs, i));
+			s += len;
+			i++;
 		}
 	}
-	strs[k] = 0;
+	strs[i] = NULL;
 	return (strs);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-	int		words_count;
 
-	if (!s)
-		return (0);
-	strs = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	strs = (char **)ft_calloc(count_words(s, c) + 1, sizeof(char *));
 	if (!strs)
-		return (0);
-	return (splited_split(strs, s, c));
+		return (NULL);
+	return (split(strs, s, c));
 }

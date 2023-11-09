@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 19:20:05 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/05 11:10:08 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/08 07:44:58 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/08 09:57:00 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,17 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
+	size_t	str_len;
 
+	if (!s)
+		return ((char *)0);
+	str_len = ft_strlen(s);
+	if (start >= str_len)
+		return (ft_strdup(""));
+	if (len > str_len - start)
+		len = str_len - start;
 	str = (char *)ft_calloc(len + 1, sizeof(char));
-	if (!str)
-		return (NULL);
-	ft_strlcpy(str, s + start, len + 1);
+	if (str)
+		ft_strlcpy(str, s + start, len + 1);
 	return (str);
 }

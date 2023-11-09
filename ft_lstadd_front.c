@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 08:33:36 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/06 08:35:30 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/09 10:26:19 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/09 10:30:55 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new->next = *lst;
+	if (!lst && !new)
+		return ;
+	if (*lst)
+		new->next = *lst;
 	*lst = new;
 }

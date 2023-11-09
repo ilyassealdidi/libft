@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 08:35:50 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/06 10:05:05 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/09 10:31:59 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/09 11:32:19 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_lstsize(t_list *lst)
 {
 	int	cnt;
 
+	if (!lst)
+		return (0);
 	cnt = 0;
 	while (lst)
 	{

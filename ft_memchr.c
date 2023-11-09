@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 13:36:57 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/02 15:19:11 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/07 10:58:52 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/09 13:32:53 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return (ptr);
 		ptr++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -5,23 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 12:18:18 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/04 19:18:27 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/06 19:04:31 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/07 08:26:51 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t len)
 {
-	size_t	len;
+	size_t	slen;
+	size_t	i;
 
-	len = ft_strlen(src);
-	if (dstsize)
+	i = 0;
+	slen = ft_strlen(src);
+	if (len)
 	{
-		while (*src && --dstsize)
+		while (*src && ++i < len)
 			*dst++ = *src++;
-		*dst = '\0';
+		*dst = 0;
 	}
-	return (len);
+	return (slen);
 }

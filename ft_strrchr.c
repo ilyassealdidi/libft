@@ -5,23 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 12:24:02 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/01 21:10:12 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/07 09:59:32 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/07 10:32:25 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*ptr;
+	char	*string;
 
-	ptr = 0;
+	string = NULL;
 	while (*s)
 	{
-		if (*s == c)
-			ptr = (char *)s;
+		if (*s == (char)c)
+			string = (char *)s;
 		s++;
 	}
-	if (c == '\0')
+	if (*s == (char)c)
 		return ((char *)s);
-	return (ptr);
+	return (string);
 }

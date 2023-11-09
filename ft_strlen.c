@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 11:37:18 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/01 15:42:59 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/07 07:58:36 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/07 08:00:31 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	i;
+	size_t	len;
 
-	i = 0;
+	len = 0;
 	while (*s++)
-		i++;
-	return (i);
+		len++;
+	return (len);
 }

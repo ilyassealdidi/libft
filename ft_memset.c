@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 11:43:21 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/01 20:34:30 by ialdidi          ###   ########.fr       */
+/*   Updated: 2023/11/09 11:28:13 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	char	*ptr;
 	int		i;
 
 	i = 0;

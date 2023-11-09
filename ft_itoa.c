@@ -5,47 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 16:16:06 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/04 18:08:12 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/08 15:47:31 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/09 08:33:59 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	num_length(int n)
+static int	number_length(int num)
 {
-	int	len;
+	int	cnt;
 
-	len = 1 + (n < 0);
-	n /= 10;
-	while (n)
+	cnt = 1;
+	while (num / 10)
 	{
-		n /= 10;
-		len++;
+		cnt++;
+		num /= 10;
 	}
-	return (len);
+	return (cnt + (num < 0));
 }
 
 char	*ft_itoa(int n)
 {
-	long	nbr;
-	int		num_len;
-	char	*str;
+	int		num;
+	int		n_len;
+	char	*ascii;
 
-	num_len = num_length(n);
-	str = (char *)calloc(num_len + 1, sizeof(char));
-	if (!str)
+	num = n;
+	n_len = number_length(num);
+	ascii = (char *)ft_calloc(n_len + 1, sizeof(char));
+	if (!ascii)
 		return (NULL);
-	nbr = n;
-	if (nbr <= 0)
+	while (n_len)
 	{
-		str[0] = '-' * (nbr < 0) + '0' * (nbr == 0);
-		nbr = -nbr;
+		ascii[--n_len] = (num % 10) * (1 - 2 * (num < 0)) + '0';
+		num /= 10;
 	}
-	while (nbr)
-	{
-		str[--num_len] = (nbr % 10) + '0';
-		nbr /= 10;
-	}
-	return (str);
+	*ascii = *ascii - 3 * (n < 0);
+	return (ascii);
 }

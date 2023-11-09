@@ -5,17 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 15:07:49 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/09 13:38:03 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/07 15:53:10 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/09 11:31:20 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_isspace(int c)
+{
+	return (c == 32 || (c >= 9 && c <= 13));
+}
+
 int	ft_atoi(const char *str)
 {
-	unsigned long long	num;
-	int					sign;
+	long	num;
+	int		sign;
 
 	num = 0;
 	sign = 1;
@@ -25,10 +30,10 @@ int	ft_atoi(const char *str)
 		sign = 1 - 2 * (*str++ == '-');
 	while (ft_isdigit(*str))
 	{
-		if (num > 1844674407370955161
-			|| (num == 1844674407370955161 && *str - '0' > 5))
-			return (-1 * (sign > 0));
-		num = num * 10 + (*str++ - '0');
+		if (num > 922337203685477580 
+			|| (num == 922337203685477580 && *str - '0' > 7))
+			return (-1 * (sign == 1));
+		num = num * 10 + *str++ - '0';
 	}
 	return (num * sign);
 }

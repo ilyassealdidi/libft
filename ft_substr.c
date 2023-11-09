@@ -16,7 +16,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 
-	str = (char *)calloc(len + 1, sizeof(char));
+	str = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	ft_strlcpy(str, s + start, len + 1);

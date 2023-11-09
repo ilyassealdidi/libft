@@ -1,6 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   aldidi.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/09 14:23:34 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/09 14:24:00 by ialdidi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 static int	number_length(int num)
 {
 	int	cnt;
@@ -13,6 +26,7 @@ static int	number_length(int num)
 	}
 	return (cnt + (num < 0));
 }
+
 char	*ft_itoa(int n)
 {
 	int		num;
@@ -33,9 +47,7 @@ char	*ft_itoa(int n)
 	return (ascii);
 }
 
-int main(int argc, char const *argv[])
+int	main(int argc, char const *argv[])
 {
-	char *s = ft_itoa(atoi(argv[1]));
-	printf("\n%s", s);
-	return 0;
+	return (0);
 }

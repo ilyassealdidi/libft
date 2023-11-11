@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:47:31 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/09 08:33:59 by ialdidi          ###   ########.fr       */
+/*   Updated: 2023/11/11 08:57:33 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ char	*ft_itoa(int n)
 {
 	int		num;
 	int		n_len;
-	char	*ascii;
+	char	*str;
 
 	num = n;
 	n_len = number_length(num);
-	ascii = (char *)ft_calloc(n_len + 1, sizeof(char));
-	if (!ascii)
+	str = (char *)ft_calloc(n_len + 1, sizeof(char));
+	if (!str)
 		return (NULL);
 	while (n_len)
 	{
-		ascii[--n_len] = (num % 10) * (1 - 2 * (num < 0)) + '0';
+		str[--n_len] = (num % 10) * (1 - 2 * (num < 0)) + '0';
 		num /= 10;
 	}
-	*ascii = *ascii - 3 * (n < 0);
-	return (ascii);
+	*str = *str - 3 * (n < 0);
+	return (str);
 }

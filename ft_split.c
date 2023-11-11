@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:41:54 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/08 16:16:34 by ialdidi          ###   ########.fr       */
+/*   Updated: 2023/11/11 08:57:33 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ static char	**split(char **strs, char const *s, char c)
 	{
 		while (*s && *s == c)
 			s++;
-		len = 0;
 		if (*s)
 		{
+			len = 0;
 			while (s[len] && s[len] != c)
 				len++;
 			strs[i] = ft_substr(s, 0, len);

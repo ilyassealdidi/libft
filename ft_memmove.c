@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:05:24 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/06 09:06:39 by ialdidi          ###   ########.fr       */
+/*   Updated: 2023/11/11 08:57:33 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 /*"Ilyassej";*/
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*source;
-	char	*destination;
+	unsigned char	*source;
+	unsigned char	*destination;
 
-	source = (char *)src;
-	destination = (char *)dst;
+	source = (unsigned char *)src;
+	destination = (unsigned char *)dst;
 	if (source < destination)
 		while (len--)
 			destination[len] = source[len];

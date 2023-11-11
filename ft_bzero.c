@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 11:48:13 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/02 13:17:52 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/11 08:55:26 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/11 08:55:27 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	while (n--)
-		*((char *)s++) = 0;
+	ft_memset(s, 0, n);
 }

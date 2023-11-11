@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:53:10 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/09 11:31:20 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/11 08:55:36 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/11 08:55:37 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isspace(int c)
-{
-	return (c == 32 || (c >= 9 && c <= 13));
-}
 
 int	ft_atoi(const char *str)
 {
@@ -24,7 +19,7 @@ int	ft_atoi(const char *str)
 
 	num = 0;
 	sign = 1;
-	while (ft_isspace(*str))
+	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-' || *str == '+')
 		sign = 1 - 2 * (*str++ == '-');

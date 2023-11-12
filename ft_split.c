@@ -71,7 +71,8 @@ static char	**split(char **strs, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-
+	if (!s)
+		return (NULL);
 	strs = (char **)ft_calloc(count_words(s, c) + 1, sizeof(char *));
 	if (!strs)
 		return (NULL);

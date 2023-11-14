@@ -6,7 +6,7 @@
 #    By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 15:34:00 by ialdidi           #+#    #+#              #
-#    Updated: 2023/11/13 19:53:59 by ialdidi          ###   ########.fr        #
+#    Updated: 2023/11/14 08:10:05 by ialdidi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ BONUS_OBJS 		= $(BONUS:.c=.o)
 CC				= cc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
-ARC				= ar rcs
+ARC				= ar rc
 
 LIBRARY			= libft.h
 NAME			= libft.a

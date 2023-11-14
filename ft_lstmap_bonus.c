@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 07:44:58 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/13 09:09:34 by ialdidi          ###   ########.fr       */
+/*   Created: 2023/11/09 15:42:54 by ialdidi           #+#    #+#             */
+/*   Updated: 2023/11/11 08:57:33 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*str;
-	size_t	str_len;
+	t_list	*new_list;
+	t_list	*current;
+	void	*content;
 
-	if (!s)
+	if (!lst || !f || !del)
 		return (NULL);
-	str_len = ft_strlen(s);
-	if (start >= str_len)
-		return (ft_strdup(""));
-	if (len > str_len - start)
-		len = str_len - start;
-	str = (char *)ft_calloc(len + 1, sizeof(char));
-	if (str)
-		ft_strlcpy(str, s + start, len + 1);
-	return (str);
+	new_list = NULL;
+	while (lst)
+	{
+		content = f(lst->content);
+		current = ft_lstnew(content);
+		if (!current)
+		{
+			del(content);
+			ft_lstclear(&new_list, del);
+			return (new_list);
+		}
+		ft_lstadd_back(&new_list, current);
+		lst = lst->next;
+	}
+	return (new_list);
 }

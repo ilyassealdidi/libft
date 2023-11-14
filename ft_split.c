@@ -6,7 +6,7 @@
 /*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:41:54 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/11 08:57:33 by ialdidi          ###   ########.fr       */
+/*   Updated: 2023/11/12 07:43:43 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ static char	**split(char **strs, char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
+
 	if (!s)
 		return (NULL);
 	strs = (char **)ft_calloc(count_words(s, c) + 1, sizeof(char *));

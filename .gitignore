@@ -1,7 +1,9 @@
-aldidi.c
+main.c
 *.out
+*.o
 *.a
 *.pdf
 .normignore
 /.vscode
 .DS_Store
+tests/

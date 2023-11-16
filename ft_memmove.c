@@ -11,12 +11,14 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*"Ilyassej";*/
+
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*source;
 	unsigned char	*destination;
 
+	if (dst == src)
+		return (dst);
 	source = (unsigned char *)src;
 	destination = (unsigned char *)dst;
 	if (source < destination)

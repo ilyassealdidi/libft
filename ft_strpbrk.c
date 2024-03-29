@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strpbrk.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 11:37:30 by ialdidi           #+#    #+#             */
-/*   Updated: 2024/03/11 10:55:50 by ialdidi          ###   ########.fr       */
+/*   Created: 2024/02/15 09:10:19 by ialdidi           #+#    #+#             */
+/*   Updated: 2024/03/09 12:14:03 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strpbrk(const char *s, const char *charset)
 {
-	unsigned char	*ptr1;
-	unsigned char	*ptr2;
-
-	ptr1 = (unsigned char *)s1;
-	ptr2 = (unsigned char *)s2;
-	while (n--)
+	while (*s)
 	{
-		if (*ptr1 != *ptr2)
-			return (*ptr1 - *ptr2);
-		ptr1++;
-		ptr2++;
+		if (ft_strchr(charset, *s))
+			return ((char *)s);
+		s++;
 	}
-	return (0);
+	return (NULL);
 }

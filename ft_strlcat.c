@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:09:09 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/11 08:57:33 by ialdidi          ###   ########.fr       */
+/*   Updated: 2024/07/03 13:16:34 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t len)
 	slen = ft_strlen(src);
 	if (len < dlen)
 		return (len + slen);
-	len -= dlen;
-	if (len)
-	{
-		while (*src && --len)
-			*(dst++ + dlen) = *src++;
-		*(dst + dlen) = 0;
-	}
+	ft_strlcpy(dst + dlen, src, len - dlen);
 	return (dlen + slen);
 }

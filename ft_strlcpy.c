@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialdidi <ialdidi@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: ialdidi <ialdidi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:04:31 by ialdidi           #+#    #+#             */
-/*   Updated: 2023/11/11 08:57:33 by ialdidi          ###   ########.fr       */
+/*   Updated: 2024/07/03 13:44:12 by ialdidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t len)
 {
-	size_t	slen;
 	size_t	i;
 
 	i = 0;
-	slen = ft_strlen(src);
 	if (len)
 	{
-		while (*src && ++i < len)
-			*dst++ = *src++;
-		*dst = 0;
+		ft_memcpy(dst, src, len - 1);
+		dst[len - 1] = '\0';
 	}
-	return (slen);
+	return (ft_strlen(src));
 }
